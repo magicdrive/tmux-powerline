@@ -99,33 +99,43 @@ fi
 ######fi
 #######register_segment "xkb_layout"
 
+declare -A wan_ip
+wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
+wan_ip+=(["foreground"]="colour255")
+wan_ip+=(["background"]="colour24")
+wan_ip+=(["separator"]="${separator_left_bold}")
+wan_ip+=(["separator_fg"]="white")
+register_segment "wan_ip"
+
 declare -A lan_ip
 lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
 lan_ip+=(["foreground"]="colour255")
 lan_ip+=(["background"]="colour24")
-lan_ip+=(["separator"]="${separator_left_bold}")
+lan_ip+=(["separator"]="${separator_left_thin}")
+lan_ip+=(["separator_fg"]="white")
 register_segment "lan_ip"
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
 date_day+=(["foreground"]="colour152")
-date_day+=(["background"]="colour24")
+date_day+=(["background"]="colour185")
 date_day+=(["separator"]="${separator_left_bold}")
 date_day+=(["separator_fg"]="default")
 register_segment "date_day"
 
 declare -A date_full
 date_full+=(["script"]="${segments_path}/date_full.sh")
-date_full+=(["foreground"]="colour16")
-date_full+=(["background"]="colour176")
+date_full+=(["foreground"]="colour152")
+date_full+=(["background"]="colour85")
 date_full+=(["separator"]="${separator_left_thin}")
 date_full+=(["separator_fg"]="default")
 register_segment "date_full"
 
 declare -A time
 time+=(["script"]="${segments_path}/time.sh")
+#time+=(["foreground"]="colour152")
 time+=(["foreground"]="colour152")
-time+=(["background"]="colour176")
+time+=(["background"]="colour85")
 time+=(["separator"]="${separator_left_thin}")
 time+=(["separator_fg"]="default")
 register_segment "time"
