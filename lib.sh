@@ -5,9 +5,9 @@ declare entries
 
 if [ -n "$USE_PATCHED_FONT" -a "$USE_PATCHED_FONT" == "true" ]; then
     # Separators (patched font required)
-    separator_left_bold="⮃⮃"
+    separator_left_bold="⮂"
     separator_left_thin="⮃"
-    separator_right_bold="⮁⮁"
+    separator_right_bold="⮀"
     separator_right_thin="⮁"
 else
     # Alternative separators in the normal Unicode table.

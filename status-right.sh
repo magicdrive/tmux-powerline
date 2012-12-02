@@ -102,18 +102,18 @@ fi
 if [ ${TMUXIP} = 'lan' ];then
     declare -A lan_ip
     lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
-    lan_ip+=(["foreground"]="colour70")
-    lan_ip+=(["background"]="colour24")
+    lan_ip+=(["foreground"]="colour255")
+    lan_ip+=(["background"]="colour2")
     lan_ip+=(["separator"]="${separator_left_bold}")
-    lan_ip+=(["separator_fg"]="white")
+    lan_ip+=(["separator_fg"]="colour2")
     register_segment "lan_ip"
 else
     declare -A wan_ip
     wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
-    wan_ip+=(["foreground"]="colour70")
-    wan_ip+=(["background"]="colour24")
+    wan_ip+=(["foreground"]="colour255")
+    wan_ip+=(["background"]="colour2")
     wan_ip+=(["separator"]="${separator_left_bold}")
-    wan_ip+=(["separator_fg"]="white")
+    wan_ip+=(["separator_fg"]="colour2")
     register_segment "wan_ip"
 fi
 
@@ -122,7 +122,7 @@ date_day+=(["script"]="${segments_path}/date_day.sh")
 date_day+=(["foreground"]="colour152")
 date_day+=(["background"]="colour24")
 date_day+=(["separator"]="${separator_left_bold}")
-date_day+=(["separator_fg"]="default")
+date_day+=(["separator_fg"]="colour24")
 register_segment "date_day"
 
 declare -A date_full
