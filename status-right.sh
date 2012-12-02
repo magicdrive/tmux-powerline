@@ -99,21 +99,23 @@ fi
 ######fi
 #######register_segment "xkb_layout"
 
-#declare -A wan_ip
-#wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
-#wan_ip+=(["foreground"]="colour255")
-#wan_ip+=(["background"]="colour24")
-#wan_ip+=(["separator"]="${separator_left_bold}")
-#wan_ip+=(["separator_fg"]="white")
-#register_segment "wan_ip"
-
-declare -A lan_ip
-lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
-lan_ip+=(["foreground"]="colour255")
-lan_ip+=(["background"]="colour85")
-lan_ip+=(["separator"]="${separator_left_bold}")
-lan_ip+=(["separator_fg"]="white")
-register_segment "lan_ip"
+if [ ${TMUXIP} = 'lan' ];then
+    declare -A lan_ip
+    lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
+    lan_ip+=(["foreground"]="colour70")
+    lan_ip+=(["background"]="colour24")
+    lan_ip+=(["separator"]="${separator_left_bold}")
+    lan_ip+=(["separator_fg"]="white")
+    register_segment "lan_ip"
+else
+    declare -A wan_ip
+    wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
+    wan_ip+=(["foreground"]="colour70")
+    wan_ip+=(["background"]="colour24")
+    wan_ip+=(["separator"]="${separator_left_bold}")
+    wan_ip+=(["separator_fg"]="white")
+    register_segment "wan_ip"
+fi
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
