@@ -23,6 +23,7 @@ if [ -z "$PLATFORM" ]; then
 	export PLATFORM="$platform"
 
 fi
+	export PLATFORM="mac"
 
 if [ -z "$USE_PATCHED_FONT" ]; then
 	# Useage of patched font for symbols. true or false.
