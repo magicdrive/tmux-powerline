@@ -57,12 +57,12 @@ if [[ ${now_playing["script"]} ]]; then
 	register_segment "now_playing"
 fi
 
-####declare -A cpu
-####cpu+=(["script"]="${segments_path}/cpu.sh")
-####cpu+=(["foreground"]="colour136")
-####cpu+=(["background"]="colour240")
-####cpu+=(["separator"]="${separator_left_bold}")
-#####register_segment "cpu"
+declare -A cpu
+cpu+=(["script"]="${segments_path}/cpu.sh")
+cpu+=(["foreground"]="colour136")
+cpu+=(["background"]="colour240")
+cpu+=(["separator"]="${separator_left_bold}")
+#register_segment "cpu"
 
 ########declare -A load
 ########load+=(["script"]="${segments_path}/load.sh")
@@ -102,18 +102,18 @@ fi
 if [ ${TMUXIP} = 'lan' ];then
     declare -A lan_ip
     lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
-    lan_ip+=(["foreground"]="colour255")
-    lan_ip+=(["background"]="colour2")
+    lan_ip+=(["foreground"]="colour0")
+    lan_ip+=(["background"]="colour251")
     lan_ip+=(["separator"]="${separator_left_bold}")
-    lan_ip+=(["separator_fg"]="colour2")
+    lan_ip+=(["separator_fg"]="colour251")
     register_segment "lan_ip"
 else
     declare -A wan_ip
     wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
-    wan_ip+=(["foreground"]="colour255")
-    wan_ip+=(["background"]="colour2")
+    wan_ip+=(["foreground"]="colour0")
+    wan_ip+=(["background"]="colour251")
     wan_ip+=(["separator"]="${separator_left_bold}")
-    wan_ip+=(["separator_fg"]="colour2")
+    wan_ip+=(["separator_fg"]="colour251")
     register_segment "wan_ip"
 fi
 
