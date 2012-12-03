@@ -130,7 +130,7 @@ date_full+=(["script"]="${segments_path}/date_full.sh")
 date_full+=(["foreground"]="colour152")
 date_full+=(["background"]="colour24")
 date_full+=(["separator"]="${separator_left_thin}")
-date_full+=(["separator_fg"]="default")
+date_full+=(["separator_fg"]="colour152")
 register_segment "date_full"
 
 declare -A time
@@ -139,7 +139,7 @@ time+=(["script"]="${segments_path}/time.sh")
 time+=(["foreground"]="colour152")
 time+=(["background"]="colour24")
 time+=(["separator"]="${separator_left_thin}")
-time+=(["separator_fg"]="default")
+time+=(["separator_fg"]="colour152")
 register_segment "time"
 
 # Print the status line in the order of registration above.
