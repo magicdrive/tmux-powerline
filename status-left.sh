@@ -19,15 +19,15 @@ mute_status_check "left"
 
 declare -A hostname
 hostname+=(["script"]="${segments_path}/hostname.sh")
-hostname+=(["foreground"]="colour255")
-hostname+=(["background"]="colour201")
+hostname+=(["foreground"]="colour255,bold")
+hostname+=(["background"]="colour54")
 hostname+=(["separator"]="${separator_right_bold}")
 #hostname+=(["separator_fg"]="colour24")
 register_segment "hostname"
 
 declare -A tmux_session_info
 tmux_session_info+=(["script"]="${segments_path}/tmux_session_info.sh")
-tmux_session_info+=(["foreground"]="colour234")
+tmux_session_info+=(["foreground"]="colour234,nobold")
 tmux_session_info+=(["background"]="colour255")
 tmux_session_info+=(["separator"]="${separator_right_bold}")
 #tmux_session_info+=(["separator_fg"]="default")
