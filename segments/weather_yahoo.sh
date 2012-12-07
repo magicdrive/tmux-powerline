@@ -13,6 +13,7 @@ unit="f"
 # The update period in seconds.
 update_period=600
 
+tp_tmpdir=$HOME/tmp
 # Cache file.
 tmp_file="${tp_tmpdir}/weather_yahoo.txt"
 
@@ -79,10 +80,10 @@ read_tmp_file() {
     degree="${lines[0]}"
     condition="${lines[1]}"
 }
-
+PLATFORM=`uname`
 degree=""
 if [ -f "$tmp_file" ]; then
-    if [ "$PLATFORM" == "mac" ]; then
+    if [ "$PLATFORM" == "Darwin" ]; then
         last_update=$(stat -f "%m" ${tmp_file})
     else
         last_update=$(stat -c "%Y" ${tmp_file})
@@ -90,7 +91,7 @@ if [ -f "$tmp_file" ]; then
     time_now=$(date +%s)
 
     up_to_date=$(echo "(${time_now}-${last_update}) < ${update_period}" | bc)
-    if [ "$up_to_date" -eq 1 ]; then
+    if [ "$up_to_date" == 1 ]; then
         read_tmp_file
     fi
 fi

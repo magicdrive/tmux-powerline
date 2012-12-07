@@ -82,13 +82,13 @@ cpu+=(["separator"]="${separator_left_bold}")
 ########battery+=(["separator"]="${separator_left_bold}")
 #register_segment "battery"
 
-######declare -A weather
-######weather+=(["script"]="${segments_path}/weather_yahoo.sh")
-#######weather+=(["script"]="${segments_path}/weather_google.sh")
-######weather+=(["foreground"]="colour255")
-######weather+=(["background"]="colour37")
-######weather+=(["separator"]="${separator_left_bold}")
-######register_segment "weather"
+declare -A weather
+weather+=(["script"]="${segments_path}/weather_yahoo.sh")
+#weather+=(["script"]="${segments_path}/weather_google.sh")
+weather+=(["foreground"]="colour255")
+weather+=(["background"]="colour37")
+weather+=(["separator"]="${separator_left_bold}")
+register_segment "weather"
 ######
 ######declare -A xkb_layout
 ######if [ "$PLATFORM" == "linux" ]; then
@@ -99,23 +99,23 @@ cpu+=(["separator"]="${separator_left_bold}")
 ######fi
 #######register_segment "xkb_layout"
 
-if [ ${TMUXIP} = 'lan' ];then
-    declare -A lan_ip
-    lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
-    lan_ip+=(["foreground"]="colour0")
-    lan_ip+=(["background"]="colour251")
-    lan_ip+=(["separator"]="${separator_left_bold}")
-    lan_ip+=(["separator_fg"]="colour251")
-    register_segment "lan_ip"
-else
-    declare -A wan_ip
-    wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
-    wan_ip+=(["foreground"]="colour0")
-    wan_ip+=(["background"]="colour251")
-    wan_ip+=(["separator"]="${separator_left_bold}")
-    wan_ip+=(["separator_fg"]="colour251")
-    register_segment "wan_ip"
-fi
+#####################################################################if [ ${TMUXIP} = 'lan' ];then
+#####################################################################    declare -A lan_ip
+#####################################################################    lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
+#####################################################################    lan_ip+=(["foreground"]="colour0")
+#####################################################################    lan_ip+=(["background"]="colour251")
+#####################################################################    lan_ip+=(["separator"]="${separator_left_bold}")
+#####################################################################    lan_ip+=(["separator_fg"]="colour251")
+#####################################################################    register_segment "lan_ip"
+#####################################################################else
+#####################################################################    declare -A wan_ip
+#####################################################################    wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
+#####################################################################    wan_ip+=(["foreground"]="colour0")
+#####################################################################    wan_ip+=(["background"]="colour251")
+#####################################################################    wan_ip+=(["separator"]="${separator_left_bold}")
+#####################################################################    wan_ip+=(["separator_fg"]="colour251")
+#####################################################################    register_segment "wan_ip"
+#####################################################################fi
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
