@@ -10,6 +10,8 @@ location="12796587"
 # Can be any of {c,f,k}.
 unit="f"
 
+source $HOME/.tmux.env
+
 # The update period in seconds.
 update_period=600
 
