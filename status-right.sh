@@ -53,8 +53,8 @@ fi
 declare -A weather
 weather+=(["script"]="${segments_path}/weather_yahoo.sh")
 #weather+=(["script"]="${segments_path}/weather_google.sh")
-weather+=(["foreground"]="colour252,nobold")
-weather+=(["background"]="colour36")
+weather+=(["foreground"]="colour0,nobold")
+weather+=(["background"]="colour51")
 weather+=(["separator"]="${separator_left_bold}")
 register_segment "weather"
 
