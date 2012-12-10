@@ -18,13 +18,6 @@ mute_status_check "right"
 # Segment
 # Comment/uncomment the register function call to enable or disable a segment.
 
-declare -A pwd
-pwd+=(["script"]="${segments_path}/pwd.sh")
-pwd+=(["foreground"]="colour211")
-pwd+=(["background"]="colour89")
-pwd+=(["separator"]="${separator_left_bold}")
-#register_segment "pwd"
-
 ####declare -A mail_count
 ####mail_count+=(["script"]="${segments_path}/mail_count_maildir.sh")
 #####mail_count+=(["script"]="${segments_path}/mail_count_mbox.sh")
@@ -57,69 +50,17 @@ if [[ ${now_playing["script"]} ]]; then
 	register_segment "now_playing"
 fi
 
-declare -A cpu
-cpu+=(["script"]="${segments_path}/cpu.sh")
-cpu+=(["foreground"]="colour136")
-cpu+=(["background"]="colour240")
-cpu+=(["separator"]="${separator_left_bold}")
-#register_segment "cpu"
-
-########declare -A load
-########load+=(["script"]="${segments_path}/load.sh")
-########load+=(["foreground"]="colour167")
-########load+=(["background"]="colour237")
-########load+=(["separator"]="${separator_left_bold}")
-########register_segment "load"
-########
-########declare -A battery
-########if [ "$PLATFORM" == "mac" ]; then
-########	battery+=(["script"]="${segments_path}/battery_mac.sh")
-########else
-########	battery+=(["script"]="${segments_path}/battery.sh")
-########fi
-########battery+=(["foreground"]="colour127")
-########battery+=(["background"]="colour137")
-########battery+=(["separator"]="${separator_left_bold}")
-#register_segment "battery"
-
 declare -A weather
 weather+=(["script"]="${segments_path}/weather_yahoo.sh")
 #weather+=(["script"]="${segments_path}/weather_google.sh")
-weather+=(["foreground"]="colour255")
-weather+=(["background"]="colour37")
+weather+=(["foreground"]="colour252,nobold")
+weather+=(["background"]="colour36")
 weather+=(["separator"]="${separator_left_bold}")
 register_segment "weather"
-######
-######declare -A xkb_layout
-######if [ "$PLATFORM" == "linux" ]; then
-######	xkb_layout+=(["script"]="${segments_path}/xkb_layout.sh")
-######	xkb_layout+=(["foreground"]="colour117")
-######	xkb_layout+=(["background"]="colour125")
-######	xkb_layout+=(["separator"]="${separator_left_bold}")
-######fi
-#######register_segment "xkb_layout"
-
-#####################################################################if [ ${TMUXIP} = 'lan' ];then
-#####################################################################    declare -A lan_ip
-#####################################################################    lan_ip+=(["script"]="${segments_path}/lan_ip.sh")
-#####################################################################    lan_ip+=(["foreground"]="colour0")
-#####################################################################    lan_ip+=(["background"]="colour251")
-#####################################################################    lan_ip+=(["separator"]="${separator_left_bold}")
-#####################################################################    lan_ip+=(["separator_fg"]="colour251")
-#####################################################################    register_segment "lan_ip"
-#####################################################################else
-#####################################################################    declare -A wan_ip
-#####################################################################    wan_ip+=(["script"]="${segments_path}/wan_ip.sh")
-#####################################################################    wan_ip+=(["foreground"]="colour0")
-#####################################################################    wan_ip+=(["background"]="colour251")
-#####################################################################    wan_ip+=(["separator"]="${separator_left_bold}")
-#####################################################################    wan_ip+=(["separator_fg"]="colour251")
-#####################################################################    register_segment "wan_ip"
-#####################################################################fi
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
-date_day+=(["foreground"]="colour152")
+date_day+=(["foreground"]="colour152,nobold")
 date_day+=(["background"]="colour24")
 date_day+=(["separator"]="${separator_left_bold}")
 date_day+=(["separator_fg"]="colour24")
@@ -135,7 +76,6 @@ register_segment "date_full"
 
 declare -A time
 time+=(["script"]="${segments_path}/time.sh")
-#time+=(["foreground"]="colour152")
 time+=(["foreground"]="colour152")
 time+=(["background"]="colour24")
 time+=(["separator"]="${separator_left_thin}")
