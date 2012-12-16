@@ -1,5 +1,5 @@
 # Library functions.
-
+#fififif
 segments_dir="segments"
 declare entries
 

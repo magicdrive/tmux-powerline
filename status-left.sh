@@ -25,6 +25,7 @@ hostname+=(["separator"]="${separator_right_bold}")
 #hostname+=(["separator_fg"]="colour24")
 register_segment "hostname"
 
+
 declare -A tmux_session_info
 tmux_session_info+=(["script"]="${segments_path}/tmux_session_info.sh")
 tmux_session_info+=(["foreground"]="colour234,nobold")
@@ -32,6 +33,13 @@ tmux_session_info+=(["background"]="colour255")
 tmux_session_info+=(["separator"]="${separator_right_bold}")
 #tmux_session_info+=(["separator_fg"]="default")
 register_segment "tmux_session_info"
+
+declare -A prefix
+prefix+=(["script"]="${segments_path}/tmux_prefix.sh")
+prefix+=(["foreground"]="colour255")
+prefix+=(["background"]="colour60")
+prefix+=(["separator"]="${separator_right_bold}")
+register_segment "prefix"
 
 #########declare -A ifstat
 #########ifstat+=(["script"]="${segments_path}/ifstat.sh")
