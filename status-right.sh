@@ -50,6 +50,13 @@ if [[ ${now_playing["script"]} ]]; then
 	register_segment "now_playing"
 fi
 
+declare -A prefix
+prefix+=(["script"]="${segments_path}/tmux_prefix.sh")
+prefix+=(["foreground"]="colour255")
+prefix+=(["background"]="colour60")
+prefix+=(["separator"]="${separator_left_bold}")
+register_segment "prefix"
+
 declare -A weather
 weather+=(["script"]="${segments_path}/weather_yahoo.sh")
 #weather+=(["script"]="${segments_path}/weather_google.sh")
