@@ -20,7 +20,7 @@ mute_status_check "left"
 declare -A hostname
 hostname+=(["script"]="${segments_path}/hostname.sh")
 hostname+=(["foreground"]="colour255,bold")
-hostname+=(["background"]="colour54")
+hostname+=(["background"]="colour8")
 hostname+=(["separator"]="${separator_right_bold}")
 #hostname+=(["separator_fg"]="colour24")
 register_segment "hostname"

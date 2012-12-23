@@ -52,8 +52,8 @@ fi
 
 declare -A prefix
 prefix+=(["script"]="${segments_path}/tmux_prefix.sh")
-prefix+=(["foreground"]="colour255")
-prefix+=(["background"]="colour60")
+prefix+=(["foreground"]="colour0")
+prefix+=(["background"]="colour145")
 prefix+=(["separator"]="${separator_left_bold}")
 register_segment "prefix"
 
@@ -61,22 +61,22 @@ declare -A weather
 weather+=(["script"]="${segments_path}/weather_yahoo.sh")
 #weather+=(["script"]="${segments_path}/weather_google.sh")
 weather+=(["foreground"]="colour255,bold")
-weather+=(["background"]="colour58")
+weather+=(["background"]="colour79")
 weather+=(["separator"]="${separator_left_bold}")
 register_segment "weather"
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
-date_day+=(["foreground"]="colour152,nobold")
-date_day+=(["background"]="colour24")
+date_day+=(["foreground"]="colour152,bold")
+date_day+=(["background"]="colour8")
 date_day+=(["separator"]="${separator_left_bold}")
-date_day+=(["separator_fg"]="colour24")
+date_day+=(["separator_fg"]="colour8")
 register_segment "date_day"
 
 declare -A date_full
 date_full+=(["script"]="${segments_path}/date_full.sh")
 date_full+=(["foreground"]="colour152")
-date_full+=(["background"]="colour24")
+date_full+=(["background"]="colour8")
 date_full+=(["separator"]="${separator_left_thin}")
 date_full+=(["separator_fg"]="colour152")
 register_segment "date_full"
@@ -84,7 +84,7 @@ register_segment "date_full"
 declare -A time
 time+=(["script"]="${segments_path}/time.sh")
 time+=(["foreground"]="colour152")
-time+=(["background"]="colour24")
+time+=(["background"]="colour8")
 time+=(["separator"]="${separator_left_thin}")
 time+=(["separator_fg"]="colour152")
 register_segment "time"
