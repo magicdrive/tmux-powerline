@@ -30,7 +30,7 @@ mute_status_check "right"
 
 declare -A now_playing
 #now_playing+=(["script"]="${segments_path}/np_mpd.sh")
-now_playing+=(["script"]="${segments_path}/np_itunes_mac.sh")
+#now_playing+=(["script"]="${segments_path}/np_itunes_mac.sh")
 #now_playing+=(["script"]="${segments_path}/np_mpd_simple.sh")
 #now_playing+=(["script"]="${segments_path}/np_mocp.sh")
 #now_playing+=(["script"]="${segments_path}/np_spotify_linux_wine.sh")
