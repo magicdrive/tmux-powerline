@@ -34,6 +34,7 @@ parse_git_branch() {
 		return
 	fi
 
+
     # clean off unnecessary information
     branch=${branch##*/}
 
