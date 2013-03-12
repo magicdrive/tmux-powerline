@@ -24,6 +24,7 @@ parse_git_stats(){
     # check if git
     [[ -z $(git rev-parse --git-dir 2> /dev/null) ]] && return
 
+    git status > /dev/null 2>&1
     # return the number of staged items
     staged=$(git ls-files --modified | wc -l)
     echo $staged
