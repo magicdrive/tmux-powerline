@@ -57,13 +57,19 @@ uname+=(["background"]="colour145")
 uname+=(["separator"]="${separator_left_bold}")
 register_segment "uname"
 
-declare -A weather
-weather+=(["script"]="${segments_path}/weather_yahoo.sh")
-#weather+=(["script"]="${segments_path}/weather_google.sh")
+declare -A load
+weather+=(["script"]="${segments_path}/load.sh")
 weather+=(["foreground"]="colour250,nobold")
 weather+=(["background"]="colour29")
 weather+=(["separator"]="${separator_left_bold}")
-register_segment "weather"
+register_segment "load"
+
+################################################weather+=(["script"]="${segments_path}/weather_yahoo.sh")
+#################################################weather+=(["script"]="${segments_path}/weather_google.sh")
+################################################weather+=(["foreground"]="colour250,nobold")
+################################################weather+=(["background"]="colour29")
+################################################weather+=(["separator"]="${separator_left_bold}")
+################################################register_segment "weather"
 
 declare -A date_day
 date_day+=(["script"]="${segments_path}/date_day.sh")
