@@ -18,7 +18,8 @@ else
 fi
 
 # Make sure that grep does not emit colors.
-export GREP_OPTIONS="--color=never"
+#export GREP_OPTIONS="--color=never"
+alias grep="grep --color=never"
 
 # Create temp directory for segments to use.
 export tp_tmpdir="/tmp/tmux-powerline"
