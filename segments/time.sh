@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 # Prints the current time.
-date +"%H:%M "
+TZ="Asia/Tokyo" date +"%H:%M "
 
 exit 0
