@@ -8,7 +8,7 @@ source "$segment_path/../lib.sh"
 tmux_path=$(get_tmux_cwd)
 cd "$tmux_path"
 
-branch_symbol="⭠"
+branch_symbol=""
 git_colour="colour5"
 git_svn_colour="colour34"
 svn_colour="colour220"
